@@ -7,9 +7,9 @@ public class HW4 {
 
     public static void main(String[] args) {
         HW4 w = new HW4();
-        Thread printAThread = new Thread(w::printA);
-        Thread printBThread = new Thread(w::printB);
-        Thread printCThread = new Thread(w::printC);
+        Thread printAThread = new Thread(() -> w.printA());
+        Thread printBThread = new Thread(() -> w.printB());
+        Thread printCThread = new Thread(() -> w.printC());
         printAThread.start();
         printBThread.start();
         printCThread.start();
